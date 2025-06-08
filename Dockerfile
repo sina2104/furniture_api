@@ -1,22 +1,26 @@
 FROM python:3.11-slim
 
-# Install OS dependencies
+# Установить системные зависимости, нужные для opencv-python
 RUN apt-get update && apt-get install -y \
     libgl1-mesa-glx \
+    libglib2.0-0 \
+    libsm6 \
+    libxext6 \
+    libxrender-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Set working dir
+# Рабочая директория
 WORKDIR /app
 
-# Copy everything
+# Копируем файлы
 COPY app ./app
 COPY requirements.txt .
 
-# Install Python dependencies
+# Установка Python-зависимостей
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
-# Expose port
+# Указываем порт
 EXPOSE 8000
 
-# Run FastAPI app
+# Запуск FastAPI-приложения
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
