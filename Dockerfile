@@ -20,7 +20,7 @@ COPY requirements.txt .
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
 # Указываем порт
-EXPOSE 8000
+EXPOSE 8001
 
 # Запуск FastAPI-приложения
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["bash", "./run.sh"]

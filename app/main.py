@@ -88,3 +88,9 @@ async def segment_image(file: UploadFile = File(...)):
     cv2.imwrite(RESULT_PATH, image_cv)
 
     return FileResponse(RESULT_PATH, media_type="image/jpeg", filename="result.jpg")
+
+
+if __name__ == "__main__":
+    import uvicorn
+
+    uvicorn.run(app, host="localhost", port=8001, log_level="debug")
