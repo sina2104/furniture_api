@@ -4,5 +4,6 @@ torch
 torchvision
 opencv-python
 pillow
+requests
 pydantic==2.11.4
 pydantic-settings==2.9.1
