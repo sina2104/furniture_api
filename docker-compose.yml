@@ -1,0 +1,24 @@
+﻿version: "3.8"
+
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app/images:/app/app/images  # Persist results
+    restart: always
+
+  tester:
+    image: python:3.11
+    depends_on:
+      - app
+    volumes:
+      - .:/code
+    working_dir: /code
+    entrypoint: >
+      sh -c "
+        pip install requests &&
+        sleep 10 &&
+        python test_segment_api.py
+      "

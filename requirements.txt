@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+torch
+torchvision
+opencv-python
+pillow
+pydantic==2.11.4
+pydantic-settings==2.9.1
