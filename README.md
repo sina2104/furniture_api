@@ -13,6 +13,11 @@ The result with annotaions will also appear in the images folder:
 ```shell
 app/images/Result.jpg
 ```
+
+---
+### Dataset
+Dataset with the images made on UnrealEngine and their annotations has been uploaded publicly: [Huggingface_Dataset](https://huggingface.co/datasets/sina09/UnrealEngine_Furniture). 
+
 ### Color codes:
 - ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `Sofa`
 - ![#c5f015](https://placehold.co/15x15/c5f015/c5f015.png) `Chair`
